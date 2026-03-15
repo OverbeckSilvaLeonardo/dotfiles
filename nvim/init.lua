@@ -240,7 +240,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 
 
-local colemak = require('lua.keymaps.colemak_remap')
+local colemak = require('keymaps.colemak_remap')
 colemak.setup()
 
 ---@type vim.Option
