@@ -362,7 +362,6 @@ require('lazy').setup({
         cond = function() return vim.fn.executable 'make' == 1 end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
-      ---@type LazySpec
       {
         "mikavilpas/yazi.nvim",
         version = "*", -- use the latest stable version
@@ -405,26 +404,26 @@ require('lazy').setup({
           -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
           vim.g.loaded_netrwPlugin = 1
         end,
-      }
+      },
       {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    lazy = false,
-    config = function()
-        vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true, desc = "Toggle file explorer" })
-        -- OR, for lazy loading (recommended):
-        -- keys = { {"<leader>e", ":NvimTreeToggle<CR>", desc = "Toggle file explorer"} }
-        require("nvim-tree").setup {
+        'nvim-tree/nvim-tree.lua',
+        version = '*',
+        lazy = false,
+        config = function()
+          vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true, desc = 'Toggle file explorer' })
+          -- OR, for lazy loading (recommended):
+          -- keys = { {"<leader>e", ":NvimTreeToggle<CR>", desc = "Toggle file explorer"} }
+          require('nvim-tree').setup {
             -- Your nvim-tree configuration options go here
             -- See https://github.com for details
             view = {
-                width = 30,
+              width = 30,
             },
             -- Add other configurations as needed, for example:
             -- hijack_directories = { enable = false } -- set to false if you don't want it to open on startup when opening a directory
-        }
-    end,
-},
+          }
+        end,
+      },
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
