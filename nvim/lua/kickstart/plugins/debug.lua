@@ -55,6 +55,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'debugpy',
       },
     }
 
@@ -97,6 +98,29 @@ return {
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
+
+    -- Python
+    dap.adapters.debugpy = {
+      type = 'executable',
+      command = vim.fn.stdpath('data') .. '/mason/packages/debugpy/venv/bin/python',
+      args = { '-m', 'debugpy.adapter' },
+    }
+    dap.configurations.python = {
+      {
+        type = 'debugpy',
+        request = 'launch',
+        name = 'Launch file',
+        program = '${file}',
+        console = 'integratedTerminal',
+        pythonPath = function()
+          local venv = os.getenv('VIRTUAL_ENV') or os.getenv('CONDA_PREFIX')
+          if venv then
+            return venv .. '/bin/python'
+          end
+          return vim.fn.stdpath('data') .. '/mason/packages/debugpy/venv/bin/python'
+        end,
+      },
+    }
 
     -- Install golang specific config
     require('dap-go').setup {
