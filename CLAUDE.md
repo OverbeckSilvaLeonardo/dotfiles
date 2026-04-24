@@ -31,6 +31,8 @@ custom.plugins         → nvim-tree, claude-code.nvim, anything personal
 
 **Debug** via nvim-dap (`lua/kickstart/plugins/debug.lua`): Go (delve) and Python (debugpy) pre-configured. DAP debuggers installed by Mason automatically.
 
+**Auto-save** triggers on `InsertLeave` and `TextChanged` (normal buffers only). No manual `:w` needed during editing.
+
 **Colemak remap** exists at `lua/keymaps/colemak_remap.lua` but is commented out in `init.lua`. MNEI = HJKL movement when enabled.
 
 ## Adding plugins
@@ -50,6 +52,14 @@ stylua nvim/
 |-----|--------|
 | `<C-b>` / `<M-b>` | Toggle nvim-tree |
 | `<leader>f` | Format buffer (conform) |
+| `<leader>z` | Toggle no-neck-pain zen centering (120 col width) |
+| `<leader>gb` | Toggle git blame (blame.nvim) |
 | `<leader>b` / `<leader>B` | DAP toggle/conditional breakpoint |
 | `<F5>/<F1>/<F2>/<F3>/<F7>` | DAP continue/step-into/over/out/UI |
 | `<C-h/j/k/l>` | Window navigation |
+
+## Custom plugins
+
+- `claude-code.nvim` — Claude Code integration (`greggh/claude-code.nvim`, default setup)
+- `no-neck-pain.nvim` — centered layout toggled via `<leader>z`
+- `blame.nvim` — inline git blame toggled via `<leader>gb`
