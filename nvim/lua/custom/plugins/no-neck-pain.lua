@@ -5,5 +5,8 @@ return {
   },
   opts = {
     width = 120,
+    buffers = {
+      right = { enabled = false },
+    },
   },
 }
