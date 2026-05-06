@@ -61,5 +61,5 @@ stylua nvim/
 ## Custom plugins
 
 - `claude-code.nvim` — Claude Code integration (`greggh/claude-code.nvim`, default setup)
-- `no-neck-pain.nvim` — centered layout toggled via `<leader>z`
+- `zen-mode.nvim` — centered layout toggled via `<leader>z`
 - `blame.nvim` — inline git blame toggled via `<leader>gb`
