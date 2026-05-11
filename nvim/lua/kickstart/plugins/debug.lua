@@ -68,6 +68,26 @@ return {
       --    Feel free to remove or use ones that you like more! :)
       --    Don't feel like these are good choices.
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      layouts = {
+        {
+          elements = {
+            { id = 'scopes', size = 0.25 },
+            'breakpoints',
+            'stacks',
+            'watches',
+          },
+          size = 40,
+          position = 'left',
+        },
+        {
+          elements = {
+            'repl',
+            'console',
+          },
+          size = 0.25,
+          position = 'bottom',
+        },
+      },
       ---@diagnostic disable-next-line: missing-fields
       controls = {
         icons = {
