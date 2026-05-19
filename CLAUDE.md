@@ -60,6 +60,11 @@ stylua nvim/
 
 ## Custom plugins
 
-- `claude-code.nvim` — Claude Code integration (`greggh/claude-code.nvim`, default setup)
-- `zen-mode.nvim` — centered layout toggled via `<leader>z`
-- `blame.nvim` — inline git blame toggled via `<leader>gb`
+Files in `lua/custom/plugins/` (auto-imported, no registration needed):
+
+- `no-neck-pain.lua` — `shortcuts/no-neck-pain.nvim`, centered single-buffer layout, width 120, right buffer disabled
+- `git-blame.lua` — `FabijanZulj/blame.nvim`, date format `%Y-%m-%d`, merge consecutive lines enabled
+
+## Notes
+
+`vim.g.have_nerd_font = false` — UI icons use unicode fallbacks, not Nerd Font glyphs.
