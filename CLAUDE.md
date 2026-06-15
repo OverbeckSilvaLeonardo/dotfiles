@@ -22,7 +22,7 @@ kickstart.plugins.ui   → catppuccin, mini, todo-comments, which-key
 kickstart.plugins.tools → conform, guess-indent, telescope
 kickstart.plugins.completion → blink.nvim
 kickstart.plugins.lsp  → LSP setup
-custom.plugins         → nvim-tree, claude-code.nvim, anything personal
+custom.plugins         → no-neck-pain, git-blame, anything personal
 ```
 
 **LSP servers** are declared in `lua/kickstart/lsp_servers.lua` (imported by `lua/kickstart/plugins/lsp/init.lua`). Active: `gopls`, `pyright`, `jinja_lsp`, `lua_ls`. Mason handles installation.
